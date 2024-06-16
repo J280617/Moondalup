@@ -4,5 +4,6 @@ you must design and implement a simplified car park system using Object-Oriented
 The system will be implemented in Python using the PyCharm IDE. You will use version control to manage your project and submit your work.
 
 ![Initial commit](Images/image.png)
+![Added stubs for classes](Images/image2.png)
 
 
