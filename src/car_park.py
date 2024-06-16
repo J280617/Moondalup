@@ -20,3 +20,28 @@ class CarPark:
         elif isinstance(component, Display):
             self.displays.append(component)
 
+    def add_car(self, plate_number):
+        self.plates.append(plate_number)
+        self.update_displays()
+
+    def remove_car(self, plate_number):
+        if plate_number in self.plates:
+            self.plates.remove(plate_number)
+            self.update_displays()
+        else:
+            print(f"Plate number {plate_number} is not found in the car park.")
+
+    def update_displays(self):
+        data = {
+            "available_bays": self.available_bays,
+            "temperature": 25
+        }
+        for display in self.displays:
+            display.update(data)
+
+
+    @property
+    def available_bays(self):
+        available = self.capacity - len(self.plates)
+        return max(available, 0)  # Ensure available bays is not negative
+
