@@ -6,6 +6,6 @@ The system will be implemented in Python using the PyCharm IDE. You will use ver
 ![Initial commit](Images/image.png)
 ![Added stubs for classes](Images/image2.png)
 ![Added methods to the car park class](Images/image3.png)
-
-
+![Unit tests](Images/image4.png)
+![Unit tests](Images/image5.png)
 

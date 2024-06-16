@@ -29,7 +29,8 @@ class CarPark:
             self.plates.remove(plate_number)
             self.update_displays()
         else:
-            print(f"Plate number {plate_number} is not found in the car park.")
+            #print(f"Plate number {plate_number} is not found in the car park.")
+            raise ValueError(f"Plate number {plate_number} is not found in the car park.")
 
     def update_displays(self):
         data = {
