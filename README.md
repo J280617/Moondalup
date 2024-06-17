@@ -8,4 +8,4 @@ The system will be implemented in Python using the PyCharm IDE. You will use ver
 ![Added methods to the car park class](Images/image3.png)
 ![Unit tests](Images/image4.png)
 ![Unit tests](Images/image5.png)
-
+![Unit tests](Images/image6.png)

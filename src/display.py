@@ -8,5 +8,10 @@ class Display:
     def update(self, data):
         print(f"Display {self.id} updated:")
         for key, value in data.items():
-            print(f"{key}: {value}")
-
+            if key == "message":
+                self.message = value
+            elif key == "is_on":
+                self.is_on = value
+            #print(f"{key}: {value}")
+            else:
+                print(f"Ignoring unknown attribute: {key}")
