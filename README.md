@@ -9,3 +9,4 @@ The system will be implemented in Python using the PyCharm IDE. You will use ver
 ![Unit tests](Images/image4.png)
 ![Unit tests](Images/image5.png)
 ![Unit tests](Images/image6.png)
+![Unit tests](Images/image7.png)

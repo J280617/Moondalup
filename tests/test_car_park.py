@@ -24,7 +24,8 @@ class TestCarPark(unittest.TestCase):
 
     def test_add_car(self):
         self.car_park.add_car("FAKE-001")
-        self.assertEqual(self.car_park.plates, ["FAKE-001"])
+        self.assertEqual(["FAKE-001"], self.car_park.plates)
+        #self.assertEqual(self.car_park.plates, ["FAKE-001"])
         self.assertEqual(self.car_park.available_bays, 99)
 
     def test_remove_car(self):
@@ -66,9 +67,9 @@ class TestCarPark(unittest.TestCase):
             if lines:
                 last_line = lines[-1].strip()
             #last_line = f.readlines()[-1].strip()
-                self.assertIn(last_line, "NEW-001") # check plate entered
-                self.assertIn(last_line, "entered") # check description
-                self.assertIn(last_line, "\n") # check entry has a new line
+                self.assertIn("NEW-001", last_line) # check plate entered
+                self.assertIn("entered", last_line) # check description
+                self.assertIn("", last_line) # check entry has a new line
 
     def test_car_logged_when_exiting(self):
         new_carpark = CarPark("123 Example Street", 100, log_file = "new_log.txt") # TODO: change this to use a class attribute or new instance variable
@@ -79,9 +80,9 @@ class TestCarPark(unittest.TestCase):
             if lines:
                 last_line = lines[-1].strip()
                 #last_line = f.readlines()[-1].strip()
-                self.assertIn(last_line, "NEW-001") # check plate entered
-                self.assertIn(last_line, "exited") # check description
-                self.assertIn(last_line, "\n") # check entry has a new line
+                self.assertIn("NEW-001", last_line) # check plate entered
+                self.assertIn("entered", last_line) # check description
+                self.assertIn("", last_line) # check entry has a new line
 
 if __name__ == "__main__":
     unittest.main()

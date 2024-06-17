@@ -1,3 +1,4 @@
+import json
 from sensor import Sensor
 from display import Display
 from pathlib import Path
@@ -12,6 +13,21 @@ class CarPark:
         self.log_file = log_file if isinstance(log_file, Path) else Path(log_file)
         # create the file if it doesn't exist:
         self.log_file.touch(exist_ok=True)
+
+    def write_config(self, file_path="config.json"):
+        with open(file_path, "w") as f:  # TODO: use self.config_file; use Path; add optional parm to __init__
+            json.dump({
+                "location": self.location,
+                "capacity": self.capacity,
+                "log_file": str(self.log_file)
+            }, f)
+
+    @classmethod
+    def from_config(cls, config_file=Path("config.json")):
+        config_file = config_file if isinstance(config_file, Path) else Path(config_file)
+        with config_file.open() as f:
+            config = json.load(f)
+        return cls(config["location"], config["capacity"], log_file=config["log_file"])
 
     # in CarPark class
     def _log_car_activity(self, plate, action):
@@ -29,8 +45,8 @@ class CarPark:
         elif isinstance(component, Display):
             self.displays.append(component)
 
-    def add_car(self, plate_number):
-        self.plates.append(plate_number)
+    def add_car(self, plate):
+        self.plates.append(plate)
         self.update_displays()
         self._log_car_activity(plate, "entered")
 
