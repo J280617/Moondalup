@@ -11,3 +11,5 @@ The system will be implemented in Python using the PyCharm IDE. You will use ver
 ![Unit tests](Images/image6.png)
 !![Added methods to the car park class](Images/image7.png)
 ![Main.py output](Images/image8.png)
+![Create a release](Images/image9.png)
+![Publish a release](Images/image10.png)
